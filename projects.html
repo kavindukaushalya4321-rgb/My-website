@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Kavindu Portfolio</title>
+  <meta name="description" content="Browse Kavindu's portfolio projects â€“ web apps, mobile apps, and creative digital experiences."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { outfit: ['Outfit', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+          colors: { primary: '#7C3AED', secondary: '#A855F7', accent: '#FFFFFF', dark: '#0A0A1A', darker: '#050510', card: '#111128' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-darker text-white font-outfit overflow-x-hidden">
+
+  <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"></canvas>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-black tracking-tight">
+        <span class="text-primary">K</span><span class="text-white">avindu</span><span class="text-secondary">.</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="projects.html" class="nav-link active-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-4">
+        <button id="lang-toggle" class="lang-btn">
+          <i class="fas fa-globe mr-1"></i> EN/සිං
+        </button>
+        <a href="contact.html" class="hire-btn">Hire Me</a>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-2xl text-white focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-card/95 backdrop-blur-xl border-t border-primary/20 px-6 py-6 flex flex-col gap-4">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="hire-btn text-center mt-2">Hire Me</a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative z-10 pt-40 pb-20">
+    <div class="hero-glow"></div>
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <span class="section-tag">What I've Built</span>
+      <h1 class="section-title" data-translate="projects-title">
+        My <span class="gradient-text">Projects</span>
+      </h1>
+      <p class="text-gray-400 text-xl mt-4 max-w-2xl mx-auto" data-translate="projects-hero-desc">
+        A showcase of my creative work and technical projects.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <section class="relative z-10 py-6">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-wrap justify-center gap-3" id="filter-tabs">
+        <button class="filter-btn active-filter" data-filter="all" data-translate="filter-all">All Projects</button>
+        <button class="filter-btn" data-filter="web" data-translate="filter-web">Web Apps</button>
+        <button class="filter-btn" data-filter="mobile" data-translate="filter-mobile">Mobile</button>
+        <button class="filter-btn" data-filter="design" data-translate="filter-design">Design</button>
+        <button class="filter-btn" data-filter="ai" data-translate="filter-ai">AI / ML</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="relative z-10 py-10 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-full-card" data-category="web" data-aos="fade-up" data-delay="0">
+          <div class="project-full-img" style="background: linear-gradient(135deg, #7C3AED33, #06B6D433);">
+            <i class="fas fa-shopping-cart text-6xl text-primary opacity-70"></i>
+            <div class="project-full-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-eye"></i> Live Demo</a>
+              <a href="#" class="overlay-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-full-info">
+            <div class="flex items-center justify-between mb-2">
+              <span class="project-tag">Web App</span>
+              <span class="project-year">2024</span>
+            </div>
+            <h3 class="project-title">E-Commerce Platform</h3>
+            <p class="project-desc">A full-featured online shopping platform with cart, payments, user auth, and admin dashboard.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Stripe</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Project 3 -->
+        <div class="project-full-card" data-category="ai" data-aos="fade-up" data-delay="200">
+          <div class="project-full-img" style="background: linear-gradient(135deg, #F59E0B33, #7C3AED33);">
+            <i class="fas fa-brain text-6xl text-accent opacity-70"></i>
+            <div class="project-full-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-eye"></i> Live Demo</a>
+              <a href="#" class="overlay-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-full-info">
+            <div class="flex items-center justify-between mb-2">
+              <span class="project-tag" style="color: #F59E0B; border-color: #F59E0B40;">AI / ML</span>
+              <span class="project-year">2023</span>
+            </div>
+            <h3 class="project-title">AI Chat Assistant</h3>
+            <p class="project-desc">An intelligent chatbot powered by NLP that handles customer support for businesses.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">OpenAI</span>
+              <span class="tech-tag">FastAPI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-full-card" data-category="web" data-aos="fade-up" data-delay="0">
+          <div class="project-full-img" style="background: linear-gradient(135deg, #10B98133, #7C3AED33);">
+            <i class="fas fa-chart-bar text-6xl text-green-400 opacity-70"></i>
+            <div class="project-full-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-eye"></i> Live Demo</a>
+              <a href="#" class="overlay-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-full-info">
+            <div class="flex items-center justify-between mb-2">
+              <span class="project-tag" style="color: #10B981; border-color: #10B98140;">Dashboard</span>
+              <span class="project-year">2023</span>
+            </div>
+            <h3 class="project-title">Analytics Dashboard</h3>
+            <p class="project-desc">Real-time data visualization platform with interactive charts and custom reports.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">D3.js</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-full-card" data-category="design" data-aos="fade-up" data-delay="100">
+          <div class="project-full-img" style="background: linear-gradient(135deg, #EC489933, #A855F733);">
+            <i class="fas fa-paint-brush text-6xl text-pink-400 opacity-70"></i>
+            <div class="project-full-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-eye"></i> Live Demo</a>
+              <a href="#" class="overlay-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-full-info">
+            <div class="flex items-center justify-between mb-2">
+              <span class="project-tag" style="color: #EC4899; border-color: #EC489940;">Design</span>
+              <span class="project-year">2023</span>
+            </div>
+            <h3 class="project-title">Brand Identity System</h3>
+            <p class="project-desc">Complete visual identity system for a Sri Lankan tech startup including logos and UI kit.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Figma</span>
+              <span class="tech-tag">Adobe XD</span>
+              <span class="tech-tag">Illustrator</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-full-card" data-category="web" data-aos="fade-up" data-delay="200">
+          <div class="project-full-img" style="background: linear-gradient(135deg, #7C3AED33, #F59E0B33);">
+            <i class="fas fa-graduation-cap text-6xl text-purple-400 opacity-70"></i>
+            <div class="project-full-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-eye"></i> Live Demo</a>
+              <a href="#" class="overlay-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-full-info">
+            <div class="flex items-center justify-between mb-2">
+              <span class="project-tag">Web App</span>
+              <span class="project-year">2022</span>
+            </div>
+            <h3 class="project-title">Online Learning Platform</h3>
+            <p class="project-desc">EdTech platform with video courses, quizzes, certificates, and progress tracking.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">AWS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-white/5 py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-gray-500 text-sm">Â© 2024 <span class="text-primary font-semibold">Kavindu</span>. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="text-gray-600 text-sm">Made with <span class="text-red-500">❤️ </span> in Pimbura, Agalawatta</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | Kavindu Portfolio</title>
+  <meta name="description" content="Explore Kavindu's technical skills and expertise in web development, design, and modern technologies."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { outfit: ['Outfit', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+          colors: { primary: '#7C3AED', secondary: '#A855F7', accent: '#FFFFFF', dark: '#0A0A1A', darker: '#050510', card: '#111128' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-darker text-white font-outfit overflow-x-hidden">
+
+  <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"></canvas>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-black tracking-tight">
+        <span class="text-primary">K</span><span class="text-white">avindu</span><span class="text-secondary">.</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="skills.html" class="nav-link active-link">Skills</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-4">
+        <button id="lang-toggle" class="lang-btn">
+          <i class="fas fa-globe mr-1"></i> EN/සිං
+        </button>
+        <a href="contact.html" class="hire-btn">Hire Me</a>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-2xl text-white focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-card/95 backdrop-blur-xl border-t border-primary/20 px-6 py-6 flex flex-col gap-4">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="hire-btn text-center mt-2">Hire Me</a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative z-10 pt-40 pb-20">
+    <div class="hero-glow"></div>
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <span class="section-tag" data-translate="skills-tag">What I Know</span>
+      <h1 class="section-title" data-translate="skills-title">
+        My <span class="gradient-text">Skills</span>
+      </h1>
+      <p class="text-gray-400 text-xl mt-4 max-w-2xl mx-auto" data-translate="skills-hero-desc">
+        Technologies, tools, and expertise I've mastered over the years.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills with Progress Bars -->
+  <section class="relative z-10 py-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Frontend Skills -->
+        <div data-aos="fade-right">
+          <h3 class="text-2xl font-bold mb-8 flex items-center gap-3" data-translate="skills-frontend-title">
+            <div class="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center">
+              <i class="fas fa-laptop-code text-primary"></i>
+            </div>
+            Frontend Development
+          </h3>
+          <div class="space-y-6">
+            <div class="skill-bar-item">
+              <div class="flex justify-between mb-2">
+                <span class="font-medium flex items-center gap-2"><span class="text-lg">⚛️</span> React.js</span>
+                <span class="text-primary font-bold">90%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill bg-gradient-to-r from-primary to-secondary" data-width="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="flex justify-between mb-2">
+                <span class="font-medium flex items-center gap-2"><span class="text-lg">🌐</span> HTML5 & CSS3</span>
+                <span class="text-primary font-bold">95%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill bg-gradient-to-r from-primary to-secondary" data-width="95"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="flex justify-between mb-2">
+                <span class="font-medium flex items-center gap-2"><span class="text-lg">⚡</span> JavaScript</span>
+                <span class="text-primary font-bold">88%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill bg-gradient-to-r from-primary to-secondary" data-width="88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="flex justify-between mb-2">
+                <span class="font-medium flex items-center gap-2"><span class="text-lg">🎨</span> Tailwind CSS</span>
+                <span class="text-primary font-bold">92%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill bg-gradient-to-r from-primary to-secondary" data-width="92"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="flex justify-between mb-2">
+                <span class="font-medium flex items-center gap-2"><span class="text-lg">📚</span> TypeScript</span>
+                <span class="text-primary font-bold">78%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill bg-gradient-to-r from-primary to-secondary" data-width="78"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend Skills -->
+        <div data-aos="fade-left">
+          <h3 class="text-2xl font-bold mb-8 flex items-center gap-3" data-translate="skills-backend-title">
+            <div class="w-10 h-10 bg-secondary/20 rounded-xl flex items-center justify-center">
+              <i class="fas fa-server text-secondary"></i>
+            </div>
+            Backend & Database
+          </h3>
+          <div class="space-y-6">
+            <div class="skill-bar-item">
+              <div class="flex justify-between mb-2">
+                <span class="font-medium flex items-center gap-2"><span class="text-lg">🐍</span> Python</span>
+                <span class="text-secondary font-bold">85%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill bg-gradient-to-r from-secondary to-accent" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="flex justify-between mb-2">
+                <span class="font-medium flex items-center gap-2"><span class="text-lg">🗄️</span> MySQL / PostgreSQL</span>
+                <span class="text-secondary font-bold">80%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill bg-gradient-to-r from-secondary to-accent" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="flex justify-between mb-2">
+                <span class="font-medium flex items-center gap-2"><span class="text-lg">🍃</span> MongoDB</span>
+                <span class="text-secondary font-bold">75%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill bg-gradient-to-r from-secondary to-accent" data-width="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="flex justify-between mb-2">
+                <span class="font-medium flex items-center gap-2"><span class="text-lg">🐘</span> PHP</span>
+                <span class="text-secondary font-bold">70%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill bg-gradient-to-r from-secondary to-accent" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="flex justify-between mb-2">
+                <span class="font-medium flex items-center gap-2"><span class="text-lg">☁️</span> AWS / Firebase</span>
+                <span class="text-secondary font-bold">72%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill bg-gradient-to-r from-secondary to-accent" data-width="72"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Grid -->
+  <section class="relative z-10 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag" data-translate="skills-stack-tag">Tools & Technologies</span>
+        <h2 class="section-title" data-translate="skills-stack-title">Tech <span class="gradient-text">Stack</span></h2>
+      </div>
+      <div class="grid grid-cols-3 md:grid-cols-6 gap-4 mt-12">
+        <div class="tech-card" data-aos="zoom-in" data-delay="0">
+          <div class="tech-icon" style="color: #F7DF1E;">⚡</div>
+          <div class="tech-name">JavaScript</div>
+        </div>
+        <div class="tech-card" data-aos="zoom-in" data-delay="50">
+          <div class="tech-icon" style="color: #61DAFB;">⚛️</div>
+          <div class="tech-name">React</div>
+        </div>
+        <div class="tech-card" data-aos="zoom-in" data-delay="100">
+          <div class="tech-icon" style="color: #3178C6;">📚</div>
+          <div class="tech-name">TypeScript</div>
+        </div>
+        <div class="tech-card" data-aos="zoom-in" data-delay="150">
+          <div class="tech-icon" style="color: #3776AB;">ðŸ</div>
+          <div class="tech-name">Python</div>
+        </div>
+        <div class="tech-card" data-aos="zoom-in" data-delay="200">
+          <div class="tech-icon" style="color: #38BDF8;">ðŸŽ¨</div>
+          <div class="tech-name">Tailwind</div>
+        </div>
+        <div class="tech-card" data-aos="zoom-in" data-delay="250">
+          <div class="tech-icon" style="color: #E34F26;">ðŸŒ</div>
+          <div class="tech-name">HTML5</div>
+        </div>
+        <div class="tech-card" data-aos="zoom-in" data-delay="300">
+          <div class="tech-icon" style="color: #264DE4;">ðŸŽ¨</div>
+          <div class="tech-name">CSS3</div>
+        </div>
+        <div class="tech-card" data-aos="zoom-in" data-delay="350">
+          <div class="tech-icon" style="color: #4DB33D;">ðŸƒ</div>
+          <div class="tech-name">MongoDB</div>
+        </div>
+        <div class="tech-card" data-aos="zoom-in" data-delay="400">
+          <div class="tech-icon" style="color: #336791;">ðŸ˜</div>
+          <div class="tech-name">PostgreSQL</div>
+        </div>
+        <div class="tech-card" data-aos="zoom-in" data-delay="450">
+          <div class="tech-icon" style="color: #FF9900;">â˜ï¸</div>
+          <div class="tech-name">AWS</div>
+        </div>
+        <div class="tech-card" data-aos="zoom-in" data-delay="500">
+          <div class="tech-icon" style="color: #F05032;">ðŸ”€</div>
+          <div class="tech-name">Git</div>
+        </div>
+        <div class="tech-card" data-aos="zoom-in" data-delay="550">
+          <div class="tech-icon" style="color: #2496ED;">ðŸ³</div>
+          <div class="tech-name">Docker</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soft Skills -->
+  <section class="relative z-10 py-10 pb-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Personal Strengths</span>
+        <h2 class="section-title">Soft <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+        <div class="soft-skill-card" data-aos="fade-up" data-delay="0">
+          <div class="soft-icon">ðŸ§ </div>
+          <div class="soft-name">Problem Solving</div>
+        </div>
+        <div class="soft-skill-card" data-aos="fade-up" data-delay="100">
+          <div class="soft-icon">ðŸ¤</div>
+          <div class="soft-name">Team Collaboration</div>
+        </div>
+        <div class="soft-skill-card" data-aos="fade-up" data-delay="200">
+          <div class="soft-icon">ðŸ’¬</div>
+          <div class="soft-name">Communication</div>
+        </div>
+        <div class="soft-skill-card" data-aos="fade-up" data-delay="300">
+          <div class="soft-icon">â°</div>
+          <div class="soft-name">Time Management</div>
+        </div>
+        <div class="soft-skill-card" data-aos="fade-up" data-delay="400">
+          <div class="soft-icon">ðŸŽ¯</div>
+          <div class="soft-name">Leadership</div>
+        </div>
+        <div class="soft-skill-card" data-aos="fade-up" data-delay="500">
+          <div class="soft-icon">ðŸ’¡</div>
+          <div class="soft-name">Creative Thinking</div>
+        </div>
+        <div class="soft-skill-card" data-aos="fade-up" data-delay="600">
+          <div class="soft-icon">ðŸ“š</div>
+          <div class="soft-name">Quick Learner</div>
+        </div>
+        <div class="soft-skill-card" data-aos="fade-up" data-delay="700">
+          <div class="soft-icon">ðŸ”¥</div>
+          <div class="soft-name">Passionate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-white/5 py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-gray-500 text-sm">Â© 2024 <span class="text-primary font-semibold">Kavindu</span>. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="text-gray-600 text-sm">Made with <span class="text-red-500">â ¤ï¸ </span> in Pimbura, Agalawatta</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+

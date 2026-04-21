@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Kavindu Portfolio</title>
+  <meta name="description" content="Learn more about Kavindu â€“ his background, education, hobbies and journey as a developer from Sri Lanka."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { outfit: ['Outfit', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+          colors: { primary: '#7C3AED', secondary: '#A855F7', accent: '#FFFFFF', dark: '#0A0A1A', darker: '#050510', card: '#111128' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-darker text-white font-outfit overflow-x-hidden">
+
+  <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"></canvas>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-black tracking-tight">
+        <span class="text-primary">K</span><span class="text-white">avindu</span><span class="text-secondary">.</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active-link">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-4">
+        <button id="lang-toggle" class="lang-btn">
+          <i class="fas fa-globe mr-1"></i> EN/සිං
+        </button>
+        <a href="contact.html" class="hire-btn">Hire Me</a>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-2xl text-white focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-card/95 backdrop-blur-xl border-t border-primary/20 px-6 py-6 flex flex-col gap-4">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="hire-btn text-center mt-2">Hire Me</a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative z-10 pt-40 pb-20 overflow-hidden">
+    <div class="hero-glow"></div>
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <span class="section-tag" data-translate="about-tag">Get to Know Me</span>
+      <h1 class="section-title" data-translate="about-title">
+        About <span class="gradient-text">Me</span>
+      </h1>
+      <p class="text-gray-400 text-xl mt-4 max-w-2xl mx-auto" data-translate="about-hero-desc">
+        The story behind the code — passion, creativity, and a relentless drive to build.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="relative z-10 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <!-- Image Side -->
+      <div class="relative" data-aos="fade-right">
+        <div class="about-img-wrapper">
+          <img src="images/about.png" alt="Kavindu - About Me" class="about-img"/>
+          <div class="about-img-glow"></div>
+        </div>
+        </div>
+        <!-- Location Badge -->
+        <div class="absolute -top-4 -left-4 glass-card px-4 py-3 rounded-xl border border-secondary/30">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">📍</span>
+            <div>
+              <div class="text-xs text-gray-400" data-translate="info-based">Based in</div>
+              <div class="text-sm font-semibold text-secondary" data-translate="info-location-val">Pimbura, Agalawatta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Side -->
+      <div data-aos="fade-left">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-[2px] bg-gradient-to-r from-primary to-secondary"></div>
+          <span class="text-secondary font-mono text-sm tracking-widest uppercase" data-translate="about-story-tag">My Story</span>
+        </div>
+        <h2 class="text-4xl font-black mb-6" data-translate="about-story-title">
+          Passionate Developer &<br/><span class="gradient-text">Creative Problem Solver</span>
+        </h2>
+        <div class="space-y-4 text-gray-400 text-lg leading-relaxed">
+          <p data-translate="about-story-p1">
+            My name is <strong class="text-white">Kavindu</strong>. I’m currently learning web development. Back in 2023, I served as the Technical Head of the Media Unit at <strong class="text-primary">Ananda Sastralaya, Matugama</strong>.
+          </p>
+          <p data-translate="about-story-p2">
+            Besides that, I also do live streaming and create video content. I love combining my technical skills with creative storytelling to build engaging digital experiences.
+          </p>
+        </div>
+
+        <!-- Personal Info Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+          <div class="info-item">
+            <i class="fas fa-user text-primary mr-2"></i>
+            <div>
+              <div class="text-xs text-gray-500" data-translate="info-name">Full Name</div>
+              <div class="text-sm font-medium text-white">W.A. Kavindu Kaushalya</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt text-secondary mr-2"></i>
+            <div>
+              <div class="text-xs text-gray-500" data-translate="info-location">Location</div>
+              <div class="text-sm font-medium text-white" data-translate="info-location-val">Pimbura, Agalawatta</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope text-accent mr-2"></i>
+            <div>
+              <div class="text-xs text-gray-500" data-translate="info-email">Email</div>
+              <div class="text-sm font-medium text-white truncate" title="kavindukaushalya4321@gmail.com">kavindukaushalya4321@gmail.com</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-briefcase text-primary mr-2"></i>
+            <div>
+              <div class="text-xs text-gray-500" data-translate="info-status">Status</div>
+              <div class="text-sm font-medium text-green-400 flex items-center gap-1" data-translate="info-available">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Available for Work
+              </div>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-graduation-cap text-secondary mr-2"></i>
+            <div>
+              <div class="text-xs text-gray-500" data-translate="info-degree">Degree</div>
+              <div class="text-sm font-medium text-white" data-translate="info-degree-val">Pending</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-language text-accent mr-2"></i>
+            <div>
+              <div class="text-xs text-gray-500" data-translate="info-languages">Languages</div>
+              <div class="text-sm font-medium text-white" data-translate="info-languages-val">Tamil, Sinhala, English</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-4 mt-8">
+          <a href="contact.html" class="btn-primary" data-translate="btn-contact-me">
+            <i class="fas fa-paper-plane mr-2"></i>Contact Me
+          </a>
+          <a href="#" class="btn-outline" id="download-cv-btn" data-translate="btn-cv">
+            <i class="fas fa-download mr-2"></i>Download CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Experience Timeline -->
+  <section class="relative z-10 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag" data-translate="timeline-tag">My Journey</span>
+        <h2 class="section-title" data-translate="timeline-title">Education & <span class="gradient-text">Activities</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 mt-16">
+        <!-- Education -->
+        <div data-aos="fade-right">
+          <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center">
+              <i class="fas fa-graduation-cap text-primary"></i>
+            </div>
+            Education
+          </h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot bg-primary"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2020 â€“ 2024</div>
+                <h4 class="timeline-title">BSc. Computer Science (Pending)</h4>
+                <p class="timeline-sub">University of Sri Lanka</p>
+                <p class="timeline-desc">Specialized in Software Engineering and Web Technologies. Graduated with First Class Honours.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot bg-secondary"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2018 â€“ 2020</div>
+                <h4 class="timeline-title">Advanced Level (A/L)</h4>
+                <p class="timeline-sub">National College, Sri Lanka</p>
+                <p class="timeline-desc">Combined Mathematics, Physics, and ICT stream. Achieved outstanding results.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot bg-accent"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2016 â€“ 2018</div>
+                <h4 class="timeline-title">Ordinary Level (O/L)</h4>
+                <p class="timeline-sub">National School, Sri Lanka</p>
+                <p class="timeline-desc">9 A's in Ordinary Level examinations. School prefect and IT club leader.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activities -->
+        <div data-aos="fade-left">
+          <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+            <div class="w-10 h-10 bg-secondary/20 rounded-xl flex items-center justify-center">
+              <i class="fas fa-star text-secondary"></i>
+            </div>
+            Leadership & Media
+          </h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot bg-primary"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2023</div>
+                <h4 class="timeline-title">Technical Head</h4>
+                <p class="timeline-sub">Media Unit, Ananda Sastralaya</p>
+                <p class="timeline-desc">Managed technical operations, sound systems, and live coverage for school events.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot bg-secondary"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2023 – Present</div>
+                <h4 class="timeline-title">Content Creator</h4>
+                <p class="timeline-sub">Live Streaming & Video</p>
+                <p class="timeline-desc">Creating engaging video content and managing live streaming sessions for online audiences.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hobbies/Interests -->
+  <section class="relative z-10 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Beyond Code</span>
+        <h2 class="section-title">Interests & <span class="gradient-text">Hobbies</span></h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+        <div class="hobby-card" data-aos="fade-up" data-delay="0">
+          <div class="hobby-icon">ðŸŽ®</div>
+          <div class="hobby-name">Gaming</div>
+          <div class="hobby-desc">Passionate gamer who loves strategy and RPG games</div>
+        </div>
+        <div class="hobby-card" data-aos="fade-up" data-delay="100">
+          <div class="hobby-icon">ðŸ“¸</div>
+          <div class="hobby-name">Photography</div>
+          <div class="hobby-desc">Capturing Sri Lanka's beautiful landscapes and culture</div>
+        </div>
+        <div class="hobby-card" data-aos="fade-up" data-delay="200">
+          <div class="hobby-icon">ðŸŽµ</div>
+          <div class="hobby-name">Music</div>
+          <div class="hobby-desc">Music lover who enjoys both classical and modern beats</div>
+        </div>
+        <div class="hobby-card" data-aos="fade-up" data-delay="300">
+          <div class="hobby-icon">âœˆï¸</div>
+          <div class="hobby-name">Travel</div>
+          <div class="hobby-desc">Exploring hidden gems across the beautiful Sri Lanka</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-white/5 py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-gray-500 text-sm">Â© 2024 <span class="text-primary font-semibold">Kavindu</span>. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="text-gray-600 text-sm">Made with <span class="text-red-500">❤️ </span> in Pimbura, Agalawatta</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+
+
