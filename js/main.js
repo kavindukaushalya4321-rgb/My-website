@@ -331,17 +331,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnText = document.getElementById('btn-text');
   const successMsg = document.getElementById('form-success');
 
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    // Simulate form submission
+    
     submitBtn.disabled = true;
     btnText.textContent = 'Sending...';
     submitBtn.style.opacity = '0.7';
 
-    setTimeout(() => {
-      form.style.display = 'none';
-      successMsg?.classList.remove('hidden');
-    }, 1800);
+    const formData = {
+      firstName: document.getElementById('first-name').value,
+      lastName: document.getElementById('last-name').value,
+      email: document.getElementById('email').value,
+      subject: document.getElementById('subject').value,
+      message: document.getElementById('message').value
+    };
+
+    try {
+      const response = await fetch('http://localhost:8000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        successMsg?.classList.remove('hidden');
+      } else {
+        alert('Something went wrong. Please try again.');
+        submitBtn.disabled = false;
+        btnText.textContent = 'Send Message';
+        submitBtn.style.opacity = '1';
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Could not connect to the server. Is the backend running?');
+      submitBtn.disabled = false;
+      btnText.textContent = 'Send Message';
+      submitBtn.style.opacity = '1';
+    }
   });
 
   /* ── 10. SMOOTH SCROLL FOR ANCHOR LINKS ── */
@@ -396,7 +425,6 @@ document.addEventListener('DOMContentLoaded', () => {
     en: {
       'nav-home': 'Home',
       'nav-about': 'About',
-      'nav-skills': 'Skills',
       'nav-projects': 'Projects',
       'nav-contact': 'Contact',
       'hire-me': 'Hire Me',
@@ -420,8 +448,6 @@ document.addEventListener('DOMContentLoaded', () => {
       'info-available': 'Available for Work',
       'info-languages': 'Linguistic Proficiency',
       'info-languages-val': 'English, Sinhala',
-      'skills-title': 'My <span class="gradient-text">Skills</span>',
-      'skills-tag': 'What I Know',
       'projects-title': 'My <span class="gradient-text">Projects</span>',
       'projects-tag': "What I've Built",
       'projects-desc': 'My recent work',
@@ -470,11 +496,6 @@ document.addEventListener('DOMContentLoaded', () => {
       'hobby-music-desc': 'Music lover who enjoys both classical and modern beats',
       'hobby-travel-name': 'Travel',
       'hobby-travel-desc': 'Exploring hidden gems across the beautiful Sri Lanka',
-      'skills-hero-desc': "Technologies, tools, and expertise I've mastered over the years.",
-      'skills-frontend-title': 'Frontend Development',
-      'skills-backend-title': 'Backend & Database',
-      'skills-stack-tag': 'Tools & Technologies',
-      'skills-stack-title': 'Tech <span class="gradient-text">Stack</span>',
       'filter-all': 'All Projects',
       'filter-web': 'Web Apps',
       'filter-mobile': 'Mobile',
@@ -486,7 +507,6 @@ document.addEventListener('DOMContentLoaded', () => {
     si: {
       'nav-home': 'මුල් පිටුව',
       'nav-about': 'මා ගැන',
-      'nav-skills': 'දක්ෂතා',
       'nav-projects': 'නිර්මාණ',
       'nav-contact': 'සම්බන්ධ වන්න',
       'hire-me': 'සේවය ලබාගන්න',
@@ -533,13 +553,6 @@ document.addEventListener('DOMContentLoaded', () => {
       'hobby-music-desc': 'සම්භාව්‍ය සහ නවීන සංගීතයට ප්‍රිය කරන්නෙක්',
       'hobby-travel-name': 'සංචාරය',
       'hobby-travel-desc': 'ශ්‍රී ලංකාව පුරා සැඟවුණු සුන්දර ස්ථාන ගවේෂණය කිරීම',
-      'skills-title': 'මගේ <span class="gradient-text">දක්ෂතා</span>',
-      'skills-tag': 'මා දන්නා දේ',
-      'skills-hero-desc': 'වසර ගණනාවක් පුරා මා ප්‍රගුණ කළ තාක්ෂණයන් සහ මෙවලම්.',
-      'skills-frontend-title': 'ෆ්‍රන්ට් එන්ඩ් සංවර්ධනය',
-      'skills-backend-title': 'බැක් එන්ඩ් සහ දත්ත සමුදාය',
-      'skills-stack-tag': 'මෙවලම් සහ තාක්ෂණයන්',
-      'skills-stack-title': 'තාක්ෂණික <span class="gradient-text">එකතුව</span>',
       'projects-title': 'මගේ <span class="gradient-text">නිර්මාණ</span>',
       'projects-tag': 'මා කළ නිර්මාණ',
       'projects-desc': 'මගේ මෑතකාලීන නිර්මාණ කිහිපයක්',
